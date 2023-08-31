@@ -1,5 +1,7 @@
 #include "binary_trees.h"
 
+size_t tree_height(const binary_tree_t *tree);
+
 /**
  *  tree_is_leaf - checks if a node is a leaf
  * @node: is a pointer to the node to check
@@ -42,11 +44,6 @@ int tree_is_full(const binary_tree_t *tree)
 	return (1);
 }
 
-/* insert is balance */
-
-#include "binary_trees.h"
-
-size_t tree_height(const binary_tree_t *tree);
 
 /**
  * tree_balance - measures the balance factor of a binary tree
@@ -87,7 +84,6 @@ size_t tree_height(const binary_tree_t *tree)
 
 	return (1 + (left_height > right_height ? left_height : right_height));
 }
-
 
 
 /**
