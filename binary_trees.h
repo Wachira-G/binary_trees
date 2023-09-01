@@ -24,6 +24,7 @@ struct binary_tree_s
 	struct binary_tree_s *right;
 };
 
+
 typedef struct binary_tree_s binary_tree_t;
 
 
@@ -35,6 +36,21 @@ typedef struct binary_tree_s avl_t;
 
 /* Max Binary Heap*/
 typedef struct binary_tree_s heap_t;
+
+
+/* ques in level_order*/
+
+/**
+ * struct queNode - a queing structure
+ * @node: node to put in que
+ * @next: the next node in line;
+ */
+struct queNode
+{
+	const binary_tree_t *node;
+	struct queNode *next;
+};
+
 
 void binary_tree_print(const binary_tree_t *);
 
@@ -65,6 +81,7 @@ bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
 bst_t *bst_remove(bst_t *root, int value);
 int binary_tree_is_avl(const binary_tree_t *tree);
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
 int isLeftChild(binary_tree_t *parent, binary_tree_t *current_node);
 int isRightChild(binary_tree_t *parent, binary_tree_t *current_node);
